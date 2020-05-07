@@ -10,10 +10,10 @@ namespace helto4real
 {
     public class AffirmationApp : NetDaemonApp
     {
-        public int? Hours { get; set; }
+        public double Hours { get; set; }
         public override Task InitializeAsync()
         {
-            Scheduler.RunEvery(TimeSpan.FromSeconds(10), UpdateSensorData);
+            Scheduler.RunEvery(TimeSpan.FromHours(Hours), UpdateSensorData);
             return Task.CompletedTask;
         }
 
